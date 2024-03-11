@@ -48,18 +48,21 @@ extension TirePressureSensorDetailView {
                 
         var body: some View {
             List {
-                VStack {
+                HStack {
                     Text("Pressure")
+                    Spacer()
                     Text(verbatim: sensor.pressure.description)
                 }
                 
-                VStack {
+                HStack {
                     Text("Temperature")
+                    Spacer()
                     Text(verbatim: sensor.temperature.description)
                 }
                 
-                VStack {
+                HStack {
                     Text("Battery Level")
+                    Spacer()
                     Text(verbatim: sensor.batteryLevel.description)
                 }
             }
