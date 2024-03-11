@@ -24,6 +24,11 @@ final class TPMSTests: XCTestCase {
         }
         
         XCTAssertEqual(sensor.address.rawValue, "80:EA:CA:12:BA:74")
+        XCTAssertEqual(sensor.pressure, 210.630)
+        XCTAssertEqual(sensor.pressure.rawValue, 210630)
+        XCTAssertEqual(sensor.temperature, 17.42)
+        XCTAssertEqual(sensor.temperature.rawValue, 1742)
+        XCTAssertEqual(sensor.batteryLevel, 98)
     }
     
     func testTPMS2() {
@@ -43,6 +48,11 @@ final class TPMSTests: XCTestCase {
         }
         
         XCTAssertEqual(sensor.address.rawValue, "81:EA:CA:22:AF:9B")
+        XCTAssertEqual(sensor.pressure, 202.391)
+        XCTAssertEqual(sensor.pressure.rawValue, 202391)
+        XCTAssertEqual(sensor.temperature, 16.07)
+        XCTAssertEqual(sensor.temperature.rawValue, 1607)
+        XCTAssertEqual(sensor.batteryLevel, 98)
     }
     
     func testTPMS3() throws {
@@ -60,6 +70,11 @@ final class TPMSTests: XCTestCase {
         }
         
         XCTAssertEqual(sensor.address.rawValue, "82:EA:CA:32:A7:0C")
+        XCTAssertEqual(sensor.pressure, 205.668)
+        XCTAssertEqual(sensor.pressure.rawValue, 205668)
+        XCTAssertEqual(sensor.temperature, 17.18)
+        XCTAssertEqual(sensor.temperature.rawValue, 1718)
+        XCTAssertEqual(sensor.batteryLevel, 98)
     }
     
     func testTPMS4() throws {
@@ -79,5 +94,10 @@ final class TPMSTests: XCTestCase {
         }
         
         XCTAssertEqual(sensor.address.rawValue, "83:EA:CA:42:A2:88")
+        XCTAssertEqual(sensor.pressure, 200.872)
+        XCTAssertEqual(sensor.pressure.rawValue, 200872)
+        XCTAssertEqual(sensor.temperature, 15.87)
+        XCTAssertEqual(sensor.temperature.rawValue, 1587)
+        XCTAssertEqual(sensor.batteryLevel, 98)
     }
 }
