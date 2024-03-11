@@ -9,6 +9,24 @@ import GATT
 
 final class TPMSTests: XCTestCase {
     
+    func testTPMS2() {
+        
+        // TPMS2_22AF9B
+        // 81:EA:CA:22:AF:9B
+        // 16 Bit UUIDs: 0XFBB0
+        let data: LowEnergyAdvertisingData = [0x02, 0x01, 0x05, 0x03, 0x03, 0xB0, 0xFB, 0x13, 0xFF, 0x00, 0x01, 0x81, 0xEA, 0xCA, 0x22, 0xAF, 0x9B, 0x97, 0x16, 0x03, 0x00, 0x47, 0x06, 0x00, 0x00, 0x62, 0x00]
+        
+        XCTAssertEqual(data.serviceUUIDs, [.bit16(0xFBB0)])
+        XCTAssertEqual(data.manufacturerData?.companyIdentifier, .tomtomInternational)
+        XCTAssertEqual(data.manufacturerData?.additionalData.count, 16)
+        
+        guard let sensor = TirePressureSensor(data) else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertEqual(sensor.address.rawValue, "81:EA:CA:22:AF:9B")
+    }
     
     func testTPMS4() throws {
         
