@@ -21,8 +21,14 @@ public extension TirePressureSensor {
 
 public extension TirePressureSensor.Pressure {
     
-    var kilopascal: Float {
-        Float(rawValue) / 1000
+    var kiloPascal: Double {
+        Double(rawValue) / 1000
+    }
+    
+    @available(macOS 10.12, iOS 10.0, watchOS 3.0, tvOS 10.0, *)
+    var poundPerSquareInch: Double {
+        let measurement = Measurement(value: kiloPascal, unit: UnitPressure.kilopascals)
+        return measurement.converted(to: UnitPressure.poundsForcePerSquareInch).value
     }
 }
 
@@ -40,6 +46,6 @@ extension TirePressureSensor.Pressure: ExpressibleByFloatLiteral {
 extension TirePressureSensor.Pressure: CustomStringConvertible {
     
     public var description: String {
-        return "\(kilopascal)kPa"
+        return "\(kiloPascal)kPa"
     }
 }
