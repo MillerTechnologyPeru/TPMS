@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "BluetoothAppIcon@2x.png",
+      "filename" : "TPMSAppIcon@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
