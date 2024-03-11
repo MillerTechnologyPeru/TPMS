@@ -34,15 +34,17 @@ internal extension TPMSAdvertisementRow {
             HStack {
                 // icon
                 VStack {
-                    Text(verbatim: advertisement.pressure.description)
+                    Text(verbatim: Int(advertisement.pressure.poundPerSquareInch).description)
+                    Text("PSI")
                 }
-                .frame(width: 100)
+                .frame(width: 60)
                 
                 // Text
                 VStack(alignment: .leading) {
                     Text(verbatim: advertisement.address.rawValue)
                         .font(.title3)
                     HStack {
+                        Text(verbatim: advertisement.pressure.description)
                         Text(verbatim: advertisement.temperature.description)
                         Text(verbatim: advertisement.batteryLevel.description)
                     }
