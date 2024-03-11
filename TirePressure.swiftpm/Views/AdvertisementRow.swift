@@ -35,9 +35,10 @@ internal extension TPMSAdvertisementRow {
                 // icon
                 VStack {
                     Text(verbatim: Int(advertisement.pressure.poundPerSquareInch).description)
+                        .font(.title)
                     Text("PSI")
                 }
-                .frame(width: 60)
+                .frame(width: 50)
                 
                 // Text
                 VStack(alignment: .leading) {
